@@ -1,0 +1,5 @@
+//
+// File created by:  irun
+// Do not modify this file
+
+s1::(17Feb2026:13:37:18):( ncverilog +access+r +sv +nccoverage+all digital_clock.sv clock_interface.sv clock_test.sv clock_tb.sv )

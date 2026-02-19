@@ -1,0 +1,11 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
++access+r
++sv
++nccoverage+all
+digital_clock.sv
+clock_interface.sv
+clock_test.sv
+clock_tb.sv
