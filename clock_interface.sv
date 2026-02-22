@@ -5,10 +5,9 @@
 // Description: Interface with modports for DUT & TB
 //====================================================
 
+// Pass clk as an input to the interface
+interface clock_if (input logic clk);
 
-interface clock_if;
-
-    logic clk;
     logic reset;
     logic [5:0] seconds;
     logic [5:0] minutes;
@@ -19,9 +18,9 @@ interface clock_if;
     );
 
     modport TB (
-        output clk, reset,
+        input  clk,        
+        output reset,
         input  seconds, minutes
     );
 
 endinterface
-

@@ -7,7 +7,10 @@
 
 module clock_tb;
 
-    clock_if vif();
+    logic clk; // Declare the clock signal here
+
+    // Pass the clock into the interface
+    clock_if vif(clk);
 
     digital_clock dut (
         .clk     (vif.clk),
@@ -18,10 +21,10 @@ module clock_tb;
 
     clock_test test (vif);
 
-    // Clock generation
+    // Clock generation (drive the local clk variable, not vif.clk)
     initial begin
-        vif.clk = 0;
-        forever #5 vif.clk = ~vif.clk;
+        clk = 0;
+        forever #5 clk = ~clk;
     end
 
     // VCD Dump
@@ -31,4 +34,3 @@ module clock_tb;
     end
 
 endmodule
-
